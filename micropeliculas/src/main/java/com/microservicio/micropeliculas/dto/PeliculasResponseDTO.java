@@ -20,6 +20,7 @@ public class PeliculasResponseDTO {
     private Long idPelicula;
     private String titulo;
     private LocalDate fechaEstreno;
+    private String sinopsis;
     private GenerosResponseDTO genero;
     private DirectoresResponseDTO director;
 

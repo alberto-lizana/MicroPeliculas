@@ -41,6 +41,7 @@ public class PeliculaServiceIMP implements PeliculaService {
                                                                      .idPelicula(p.getId())
                                                                      .titulo(p.getTitulo())
                                                                      .fechaEstreno(p.getFechaEstreno())
+                                                                     .sinopsis(p.getSinopsis())
                                                                     
                                                                      .director(DirectoresResponseDTO.builder()
                                                                          .idDirector(p.getDirector().getIdDirector())
@@ -64,6 +65,7 @@ public class PeliculaServiceIMP implements PeliculaService {
                                                                 .idPelicula(p.getId())
                                                                 .titulo(p.getTitulo())
                                                                 .fechaEstreno(p.getFechaEstreno())
+                                                                .sinopsis(p.getSinopsis())
                                                             
                                                                 .director(DirectoresResponseDTO.builder()
                                                                     .idDirector(p.getDirector().getIdDirector())
@@ -103,15 +105,19 @@ public class PeliculaServiceIMP implements PeliculaService {
                                             .idPelicula(guardada.getId())
                                             .titulo(guardada.getTitulo())
                                             .fechaEstreno(guardada.getFechaEstreno())
+                                            .sinopsis(guardada.getSinopsis())
+                                            
                                             .director(DirectoresResponseDTO.builder()
                                                 .idDirector(d.getIdDirector())
                                                 .nombre(d.getNombre())
                                                 .build())
+                                            
                                             .genero(GenerosResponseDTO.builder()
                                                 .idGenero(g.getIdGenero())
                                                 .nombre(g.getNombre())
                                                 .build())
-                                        .build();
+                                            
+                                            .build();
         return response;    
     }
 
