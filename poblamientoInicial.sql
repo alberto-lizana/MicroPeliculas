@@ -1,0 +1,14 @@
+-- GENEROS
+INSERT INTO generos (nombre) VALUES('DRAMA');
+INSERT INTO generos (nombre) VALUES('CRIMEN');
+INSERT INTO generos (nombre) VALUES('CIENCIA FICCIÓN');
+INSERT INTO generos (nombre) VALUES('THRILLER');
+INSERT INTO generos (nombre) VALUES('BÉLICO');
+
+-- DIRECTORES
+INSERT INTO directores (nombre) VALUES('QUENTIN TARANTINO');
+INSERT INTO directores (nombre) VALUES('MARTIN SCORSESE');
+INSERT INTO directores (nombre) VALUES('CHRISTOPHER NOLAN');
+INSERT INTO directores (nombre) VALUES('LANA WACHOWSKI Y LILLY WACHOWSKI');
+INSERT INTO directores (nombre) VALUES('FRANCIS FORD COPPOLA');
+INSERT INTO directores (nombre) VALUES('DAVID FINCHER');

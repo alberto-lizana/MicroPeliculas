@@ -28,7 +28,7 @@ public class Genero {
     @Column(name="id")
     private Long idGenero;
 
-    @Column(name="nombre", nullable=false, length=100)
+    @Column(name="nombre", nullable=false, length=100, unique=true)
     private String nombre;
 
 }

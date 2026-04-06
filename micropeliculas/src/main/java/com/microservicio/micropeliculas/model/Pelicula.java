@@ -1,5 +1,7 @@
 package com.microservicio.micropeliculas.model;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -31,8 +33,14 @@ public class Pelicula {
     @Column(name="id")
     private Long id;
 
-    @Column(name="titulo", nullable=false, length=200)
+    @Column(name="titulo", nullable=false, length=200, unique=true)
     private String titulo;
+
+    @Column(name="fecha_estreno", nullable=false)
+    private LocalDateTime fechaEstreno;
+
+    @Column(name="sinopsis", nullable=true, length=1000)
+    private String sinopsis;
 
     @ManyToOne(fetch=FetchType.LAZY, optional=false)
     @JoinColumn(name="idDirector", nullable=false)
