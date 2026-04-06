@@ -4,9 +4,15 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.microservicio.micropeliculas.dto.CrearPeliculaDTO;
 import com.microservicio.micropeliculas.dto.DirectoresResponseDTO;
 import com.microservicio.micropeliculas.dto.GenerosResponseDTO;
 import com.microservicio.micropeliculas.dto.PeliculasResponseDTO;
+import com.microservicio.micropeliculas.model.Director;
+import com.microservicio.micropeliculas.model.Genero;
+import com.microservicio.micropeliculas.model.Pelicula;
+import com.microservicio.micropeliculas.repository.DirectorRepository;
+import com.microservicio.micropeliculas.repository.GeneroRepository;
 import com.microservicio.micropeliculas.repository.PeliculaRepository;
 import com.microservicio.micropeliculas.service.PeliculaService;
 
@@ -17,9 +23,13 @@ import jakarta.transaction.Transactional;
 public class PeliculaServiceIMP implements PeliculaService {
 
     private final PeliculaRepository peliculaRepository;
+    private final DirectorRepository directorRepository;
+    private final GeneroRepository generoRepository;
 
-    public PeliculaServiceIMP(PeliculaRepository peliculaRepository) {
+    public PeliculaServiceIMP(PeliculaRepository peliculaRepository, DirectorRepository directorRepository, GeneroRepository generoRepository) {
         this.peliculaRepository = peliculaRepository;
+        this.directorRepository = directorRepository;
+        this.generoRepository = generoRepository;
     }
 
 
@@ -68,6 +78,41 @@ public class PeliculaServiceIMP implements PeliculaService {
                                                           .build())
                                                           .orElseThrow(() -> new RuntimeException("Pelicula no encontrada con id: " + id));
         return pelicula;
+    }
+
+    @Override
+    public PeliculasResponseDTO crearPelicula(CrearPeliculaDTO crearPeliculaDTO) {
+
+        Director d = directorRepository.findById(crearPeliculaDTO.getIdDirector())
+                                       .orElseThrow(() -> new RuntimeException("Director no encontrado"));
+
+        Genero g = generoRepository.findById(crearPeliculaDTO.getIdGenero())
+                                   .orElseThrow(() -> new RuntimeException("Genero no encontrado"));
+
+        Pelicula p = Pelicula.builder()
+                                 .titulo(crearPeliculaDTO.getTitulo().trim().toUpperCase())
+                                 .fechaEstreno(crearPeliculaDTO.getFechaEstreno())
+                                 .sinopsis(crearPeliculaDTO.getSinopsis().toUpperCase())
+                                 .director(d)
+                                 .genero(g)
+                                 .build();
+
+        Pelicula guardada = peliculaRepository.save(p);
+
+        PeliculasResponseDTO response = PeliculasResponseDTO.builder()
+                                            .idPelicula(guardada.getId())
+                                            .titulo(guardada.getTitulo())
+                                            .fechaEstreno(guardada.getFechaEstreno())
+                                            .director(DirectoresResponseDTO.builder()
+                                                .idDirector(d.getIdDirector())
+                                                .nombre(d.getNombre())
+                                                .build())
+                                            .genero(GenerosResponseDTO.builder()
+                                                .idGenero(g.getIdGenero())
+                                                .nombre(g.getNombre())
+                                                .build())
+                                        .build();
+        return response;    
     }
 
 }

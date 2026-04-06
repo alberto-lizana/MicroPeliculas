@@ -1,6 +1,6 @@
 package com.microservicio.micropeliculas.model;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -37,7 +37,7 @@ public class Pelicula {
     private String titulo;
 
     @Column(name="fecha_estreno", nullable=false)
-    private LocalDateTime fechaEstreno;
+    private LocalDate fechaEstreno;
 
     @Column(name="sinopsis", nullable=true, length=1000)
     private String sinopsis;

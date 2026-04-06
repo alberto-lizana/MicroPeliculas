@@ -1,0 +1,49 @@
+[   
+    {
+        "titulo": "   Club de la pelea  ",
+        "fechaEstreno": "1999-10-15",
+        "sinopsis": "Un hombre insomne conoce a Tyler Durden y juntos crean un club secreto de peleas que evoluciona hacia un movimiento caótico y antisistema.",
+        "idGenero": 1,
+        "idDirector": 6
+    },
+
+    {
+        "titulo": "El Padrino             ",
+        "fechaEstreno": "1972-03-24",
+        "sinopsis": "La historia de la familia Corleone y cómo Michael pasa de ser un joven ajeno al crimen a convertirse en líder de la mafia.",
+        "idGenero": 2,
+        "idDirector": 5
+    },
+
+    { 
+        "titulo": "              Matrix ",
+        "fechaEstreno": "1999-03-31",
+        "sinopsis": "Neo descubre que la realidad es una simulación controlada por máquinas y se une a la resistencia para liberar a la humanidad.",
+        "idGenero": 3,
+        "idDirector": 4 
+    },
+
+    {
+        "titulo": "El Origen",
+        "fechaEstreno": "2010-07-16",
+        "sinopsis": "Un ladrón especializado en sueños debe implantar una idea en la mente de un objetivo atravesando múltiples niveles del subconsciente.",
+        "idGenero": 3,
+        "idDirector": 3 
+    },
+
+    {
+        "titulo": "Isla Siniestra ",
+        "fechaEstreno": "2010-02-19",
+        "sinopsis": "Un agente investiga una desaparición en un hospital psiquiátrico aislado, enfrentándose a una realidad cada vez más confusa.",
+        "idGenero": 4,
+        "idDirector": 2 
+    },
+
+    {
+        "titulo": "Bastardos sin gloria ",
+        "fechaEstreno": "2009-08-21",
+        "sinopsis": "Un grupo de soldados judíos planea vengarse de los nazis mientras una mujer organiza su propia represalia en París.",
+        "idGenero": 5,
+        "idDirector": 1 
+    }
+]
