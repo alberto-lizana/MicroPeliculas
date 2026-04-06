@@ -94,7 +94,7 @@ public class PeliculaServiceIMP implements PeliculaService {
         Pelicula p = Pelicula.builder()
                                  .titulo(crearPeliculaDTO.getTitulo().trim().toUpperCase())
                                  .fechaEstreno(crearPeliculaDTO.getFechaEstreno())
-                                 .sinopsis(crearPeliculaDTO.getSinopsis().toUpperCase())
+                                 .sinopsis(crearPeliculaDTO.getSinopsis().toUpperCase().trim())
                                  .director(d)
                                  .genero(g)
                                  .build();
