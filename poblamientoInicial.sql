@@ -1,9 +1,9 @@
 -- GENEROS
 INSERT INTO generos (nombre) VALUES('DRAMA'); -- 1
 INSERT INTO generos (nombre) VALUES('CRIMEN'); -- 2
-INSERT INTO generos (nombre) VALUES('CIENCIA FICCI�N'); -- 3
+INSERT INTO generos (nombre) VALUES('CIENCIA FICCIÓN'); -- 3
 INSERT INTO generos (nombre) VALUES('THRILLER'); -- 4
-INSERT INTO generos (nombre) VALUES('B�LICO'); -- 5
+INSERT INTO generos (nombre) VALUES('BÉLICO'); -- 5
 
 -- DIRECTORES
 INSERT INTO directores (nombre) VALUES('QUENTIN TARANTINO'); -- 1
