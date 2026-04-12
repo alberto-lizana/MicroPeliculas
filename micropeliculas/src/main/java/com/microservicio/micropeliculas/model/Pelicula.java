@@ -21,7 +21,7 @@ import lombok.Setter;
 @Entity
 @Table(name="peliculas")
 @AllArgsConstructor
-@NoArgsConstructor(access= AccessLevel.PROTECTED)
+@NoArgsConstructor(access=AccessLevel.PROTECTED)
 @Getter
 @Setter
 @Builder
@@ -41,6 +41,9 @@ public class Pelicula {
 
     @Column(name="sinopsis", nullable=true, length=1000)
     private String sinopsis;
+
+    @Column(name="esta_disponible", nullable=false)
+    private Boolean estaDisponible;
 
     @ManyToOne(fetch=FetchType.LAZY, optional=false)
     @JoinColumn(name="idDirector", nullable=false)

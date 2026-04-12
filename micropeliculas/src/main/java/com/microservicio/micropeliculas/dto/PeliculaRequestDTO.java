@@ -1,14 +1,13 @@
 package com.microservicio.micropeliculas.dto;
 
-import lombok.NoArgsConstructor;
-
 import java.time.LocalDate;
 
-import jakarta.validation.constraints.Size;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @NoArgsConstructor
@@ -17,7 +16,7 @@ import lombok.Setter;
 @Setter
 @Builder
 
-public class CrearPeliculaDTO {
+public class PeliculaRequestDTO {
 
     @Size(min=1, max=100, message="El título debe tener entre 1 y 100 caracteres")
     private String titulo;
@@ -27,7 +26,9 @@ public class CrearPeliculaDTO {
 
     @Size(max=1000, message="La sinopsis no puede tener más de 1000 caracteres")
     private String sinopsis;
-    
+
+    private Boolean estaDisponible;
+        
     @NotNull(message="El id del género no puede ser nulo")
     private Long idGenero;
     
